@@ -34,9 +34,9 @@ async function generatePDF(report) {
     const page = await browser.newPage();
 
     await page.setContent(report);
-    await page.pdf({path: 'relatorioFinanceiro.pdf', format: 'A4'});
+    await page.pdf({ path: 'relatorioFinanceiro.pdf', format: 'A4' });
 
-    await browser .close();
+    await browser.close();
 }
 
 async function main() {
