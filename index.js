@@ -28,3 +28,37 @@ async function readlExcelFile() {
 }
 
 
+// Gerar relatório em PDF
+async function generatePDF(report) {
+    const browser = await puppeteer.launch();
+    const page - await browser.newPage();
+
+    await page.setContent(report);
+    await page.pdf({path: 'relatorioFinanceiro.pdf', format: 'A4'});
+
+    await browser .close();
+}
+
+async function main() {
+    const data = await readlExcelFile();
+
+    // Criar relatório (texto)
+    const report = `
+    <html>
+    <head><title>Relatório Financeiro</title></head>
+    <body>
+    <h1>Relatório Financeiro</h1>
+    <p>Total de Vendas: ${data.totalSales}</p>
+    <p>Total de Despesas: ${data.totalExpenses}</p>
+    <p>Lucro: ${data.profit}</p>
+    </body>
+    </html>
+    `;
+
+    console.log("Dados processados:", data);
+    console.log("Gerando PDF...");
+
+    await generatePDF(report);
+}
+
+main();
