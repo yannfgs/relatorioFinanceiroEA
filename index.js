@@ -31,7 +31,7 @@ async function readlExcelFile() {
 // Gerar relatório em PDF
 async function generatePDF(report) {
     const browser = await puppeteer.launch();
-    const page - await browser.newPage();
+    const page = await browser.newPage();
 
     await page.setContent(report);
     await page.pdf({path: 'relatorioFinanceiro.pdf', format: 'A4'});
