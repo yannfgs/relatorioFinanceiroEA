@@ -67,34 +67,34 @@ main();
 const nodemailer = require('nodemailer');
 
 async function sendEmailWithAttachment() {
-  const transporter = nodemailer.createTransport({
-    service: 'gmail', // use 'yahoo' para Yahoo, 'hotmail' para Hotmail, etc.
-    auth: {
-      user: 'seuemail@gmail.com', // seu endereço de email
-      pass: 'suasenha' // sua senha
-    }
-  });
-
-  const mailOptions = {
-    from: 'seuemail@gmail.com',
-    to: 'destinatario@gmail.com',
-    subject: 'Relatório Financeiro',
-    text: 'Segue anexo o relatório financeiro.',
-    attachments: [
-      {
-        filename: 'RelatórioFinanceiro.pdf',
-        path: './RelatórioFinanceiro.pdf'
-      }
-    ]
-  };
-
-  return new Promise((resolve, reject) => {
-    transporter.sendMail(mailOptions, (error, info) => {
-      if (error) {
-        reject(error);
-      } else {
-        resolve(info.response);
-      }
+    const transporter = nodemailer.createTransport({
+        service: 'gmail', // use 'yahoo' para Yahoo, 'hotmail' para Hotmail, etc.
+        auth: {
+            user: 'seuemail@gmail.com', // seu endereço de email
+            pass: 'suasenha' // sua senha
+        }
     });
-  });
+
+    const mailOptions = {
+        from: 'seuemail@gmail.com',
+        to: 'destinatario@gmail.com',
+        subject: 'Relatório Financeiro',
+        text: 'Segue anexo o relatório financeiro.',
+        attachments: [
+            {
+                filename: 'RelatórioFinanceiro.pdf',
+                path: './RelatórioFinanceiro.pdf'
+            }
+        ]
+    };
+
+    return new Promise((resolve, reject) => {
+        transporter.sendMail(mailOptions, (error, info) => {
+            if (error) {
+                reject(error);
+            } else {
+                resolve(info.response);
+            }
+        });
+    });
 }
