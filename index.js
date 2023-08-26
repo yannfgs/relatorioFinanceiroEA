@@ -98,3 +98,35 @@ async function sendEmailWithAttachment() {
         });
     });
 }
+
+
+async function main() {
+    const data = await readExcelFile();
+  
+    const report = `
+    <html>
+    <head><title>Relatório Financeiro</title></head>
+    <body>
+      <h1>Relatório Financeiro</h1>
+      <p>Total de Vendas: ${data.totalSales}</p>
+      <p>Total de Despesas: ${data.totalExpenses}</p>
+      <p>Lucro: ${data.profit}</p>
+    </body>
+    </html>
+    `;
+  
+    console.log("Dados processados:", data);
+    console.log("Gerando PDF...");
+  
+    await generatePDF(report);
+  
+    console.log("Enviando email com o relatório em PDF...");
+  
+    try {
+      const emailResponse = await sendEmailWithAttachment();
+      console.log("Email enviado com sucesso:", emailResponse);
+    } catch (error) {
+      console.log("Erro ao enviar o email:", error);
+    }
+  }
+  
