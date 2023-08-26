@@ -74,3 +74,16 @@ async function sendEmailWithAttachment() {
       pass: 'suasenha' // sua senha
     }
   });
+
+  const mailOptions = {
+    from: 'seuemail@gmail.com',
+    to: 'destinatario@gmail.com',
+    subject: 'Relatório Financeiro',
+    text: 'Segue anexo o relatório financeiro.',
+    attachments: [
+      {
+        filename: 'RelatórioFinanceiro.pdf',
+        path: './RelatórioFinanceiro.pdf'
+      }
+    ]
+  };
