@@ -62,3 +62,15 @@ async function main() {
 }
 
 main();
+
+
+const nodemailer = require('nodemailer');
+
+async function sendEmailWithAttachment() {
+  const transporter = nodemailer.createTransport({
+    service: 'gmail', // use 'yahoo' para Yahoo, 'hotmail' para Hotmail, etc.
+    auth: {
+      user: 'seuemail@gmail.com', // seu endereço de email
+      pass: 'suasenha' // sua senha
+    }
+  });
