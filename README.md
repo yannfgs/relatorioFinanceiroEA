@@ -1,1 +1,2 @@
 # relatorioFinanceiroEA
+# automações rotinas financeiras
