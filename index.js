@@ -27,7 +27,6 @@ async function readlExcelFile() {
     return processedData;
 }
 
-
 // Gerar relatório em PDF
 async function generatePDF(report) {
     const browser = await puppeteer.launch();
@@ -76,11 +75,11 @@ async function sendEmailWithAttachment() {
     });
 
     const mailOptions = {
-        from: 'seuemail@gmail.com',
-        to: 'destinatario@gmail.com',
-        subject: 'Relatório Financeiro',
-        text: 'Segue anexo o relatório financeiro.',
-        attachments: [
+        from: 'seuemail@gmail.com',     // seu endereço de email
+        to: 'destinatario@gmail.com',   // endereço de email do destinatário
+        subject: 'Relatório Financeiro',    // Linha de assunto
+        text: 'Segue anexo o relatório financeiro.',    // corpo do email
+        attachments: [  // arquivo(s) anexo(s)
             {
                 filename: 'RelatórioFinanceiro.pdf',
                 path: './RelatórioFinanceiro.pdf'
@@ -129,4 +128,3 @@ async function main() {
       console.log("Erro ao enviar o email:", error);
     }
   }
-  
