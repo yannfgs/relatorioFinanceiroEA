@@ -1,6 +1,7 @@
 const ExcelJS = require('exceljs');
 const puppeteer = require('puppeteer');
 
+
 // Ler dados do arquivo Excel
 async function readlExcelFile() {
     const workbook = new ExcelJS.Workbook(); // Instancia o ExcelJS
@@ -101,7 +102,7 @@ async function sendEmailWithAttachment() {
 
 async function main() {
     const data = await readExcelFile();
-  
+
     const report = `
     <html>
     <head><title>Relatório Financeiro</title></head>
@@ -113,18 +114,24 @@ async function main() {
     </body>
     </html>
     `;
-  
+
     console.log("Dados processados:", data);
     console.log("Gerando PDF...");
-  
+
     await generatePDF(report);
-  
+
     console.log("Enviando email com o relatório em PDF...");
-  
+
     try {
-      const emailResponse = await sendEmailWithAttachment();
-      console.log("Email enviado com sucesso:", emailResponse);
+        const emailResponse = await sendEmailWithAttachment();
+        console.log("Email enviado com sucesso:", emailResponse);
     } catch (error) {
-      console.log("Erro ao enviar o email:", error);
+        console.log("Erro ao enviar o email:", error);
     }
+    
+<<<<<<< HEAD
+}
+=======
   }
+
+>>>>>>> fca15418043b8ba771880245df1c41a88769a8f8
