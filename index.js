@@ -63,7 +63,6 @@ async function main() {
 
 main();
 
-
 const nodemailer = require('nodemailer');
 
 async function sendEmailWithAttachment() {
