@@ -14,7 +14,7 @@ async function readlExcelFile() {
     };
 
 
-    worksheet.eachRow((row, rowNumber) => {
+        worksheet.eachRow((row, rowNumber) => {
         // Suponha que a coluna 2 tem vendas e a coluna 3 tem despesas
         const sales = row.getCell(2).value;
         const expenses = row.getCell(3).value;
@@ -28,7 +28,6 @@ async function readlExcelFile() {
 
     return processedData;
 }
-
 
 // Gerar relatório em PDF
 async function generatePDF(report) {
@@ -64,7 +63,6 @@ async function main() {
 }
 
 main();
-
 
 const nodemailer = require('nodemailer');
 
