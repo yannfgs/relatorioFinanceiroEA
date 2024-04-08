@@ -66,6 +66,7 @@ async function main() {
     console.log("Gerando PDF...");
 
     await generatePDF(report);
+     await generatePDF(report);
 }
 
 
