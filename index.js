@@ -39,6 +39,7 @@ async function readlExcelFile() {
     processedData.profit = processedData.totalSales - processedData.totalExpenses;
 
     return processedData;
+    
 }
 
 // Gerar relatório em PDF
