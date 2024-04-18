@@ -116,7 +116,6 @@ async function sendEmailWithAttachment() {
     });
 }
 
-
 async function main() {
     const data = await readExcelFile();
 
