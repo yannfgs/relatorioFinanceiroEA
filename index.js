@@ -8,6 +8,7 @@ async function readlExcelFile() {
     await workbook.xlsx.readFile('relatorioFinanceiro.xlsx'); // Lê o arquivo Excel
 
     const worksheet = workbook.getWorksheet('relatorioFinanceiroGerencial'); // Pega a aba do arquivo Excel
+
     
     let processedData = {
         totalSales: 0,
