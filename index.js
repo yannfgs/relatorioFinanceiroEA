@@ -140,6 +140,7 @@ async function main() {
         console.log("Erro ao enviar o email:", error);
     }
 
+        
 <<<<<<< HEAD
 }
 =======
