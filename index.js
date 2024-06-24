@@ -23,7 +23,6 @@ async function readlExcelFile() {
         totalSales: 0,
         totalExpenses: 0
     };
-
     
         worksheet.eachRow((row, rowNumber) => {
         // Suponha que a coluna 2 tem vendas e a coluna 3 tem despesas
