@@ -32,7 +32,6 @@ async function readlExcelFile() {
         processedData.totalSales += sales;
         processedData.totalExpenses += expenses;
     });
-
         
     processedData.profit = processedData.totalSales - processedData.totalExpenses;
 
