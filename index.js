@@ -39,7 +39,6 @@ async function readlExcelFile() {
     
 }
 
-
 // Gerar relatório em PDF
 async function generatePDF(report) {
     const browser = await puppeteer.launch();
