@@ -52,7 +52,6 @@ async function generatePDF(report) {
 
 async function main() {
     const data = await readlExcelFile();
-
     
     // Criar relatório (texto)
     const report = `
