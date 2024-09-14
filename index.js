@@ -138,7 +138,6 @@ async function main() {
     } catch (error) {
         console.log("Erro ao enviar o email:", error);
     }
-
         
 <<<<<<< HEAD
 }
