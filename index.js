@@ -132,8 +132,7 @@ async function main() {
 
     console.log("Enviando email com o relatório em PDF...");
 
-    
-    try {
+        try {
         const emailResponse = await sendEmailWithAttachment();
         console.log("Email enviado com sucesso:", emailResponse);
     } catch (error) {
