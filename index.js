@@ -53,6 +53,7 @@ async function generatePDF(report) {
     await browser.close();
 }
 
+
 async function main() {
     const data = await readlExcelFile();
     
