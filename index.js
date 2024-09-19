@@ -77,6 +77,7 @@ async function main() {
      await generatePDF(report);
 }
 
+
 main();
 
 const nodemailer = require('nodemailer');
