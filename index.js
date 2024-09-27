@@ -19,6 +19,7 @@ async function readlExcelFile() {
         totalSales: 0,
         totalExpenses: 0
     };
+
     
   let processedData = {
         totalSales: 0,
