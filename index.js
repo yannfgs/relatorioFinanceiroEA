@@ -128,6 +128,7 @@ async function main() {
     console.log("Dados processados:", data);
     console.log("Gerando PDF...");
 
+    
     await generatePDF(report);
 
     console.log("Enviando email com o relatório em PDF...");
